@@ -1,0 +1,7 @@
+dist
+dist/
+public
+public/
+node_modules
+node_modules/
+src/components/Player/tube.css
