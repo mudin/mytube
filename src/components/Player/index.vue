@@ -59,7 +59,7 @@ export default {
   .vjs-big-play-button {
     border: none!important;
     background: none!important;
-    font-size: 4em;
+    font-size: 8em!important;
     outline: none;
   }
 </style>

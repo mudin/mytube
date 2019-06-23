@@ -1,11 +1,10 @@
 <template>
   <div>
     <el-row type="flex" justify="space-between" align="middle">
-      <el-col :span="2">
-        <Kaomoji :username="username"/>
-      </el-col>
       <el-col>
+        <Kaomoji :username="post.clientName"/>
         <el-input
+          class="comment-input"
           type="text"
           placeholder="공개 댓글 추가..."
           @keydown.enter="handleEnterPress"
@@ -16,12 +15,10 @@
       </el-col>
     </el-row>
     <el-row  type="flex" justify="end" align="middle" v-if="rawComment || onFocused">
-      <el-col :span="2">
+      <el-col style="text-align:right">
         <el-button @click="rawComment=''">
           취소
         </el-button>
-      </el-col>
-      <el-col :span="2">
         <el-button
           type="primary"
           @click="addComment"
@@ -34,6 +31,7 @@
 </template>
 <script>
 import Kaomoji from '@/components/Kaomoji';
+import Post from '@/model/Post.js';
 import { randomUsername } from '@/utils/hash.js';
 
 export default {
@@ -44,7 +42,8 @@ export default {
   data() {
     return {
       rawComment: '',
-      onFocused: false
+      onFocused: false,
+      post: Post.mockPost()
     };
   },
   computed: {
@@ -60,3 +59,12 @@ export default {
   }
 };
 </script>
+
+<style lang="less" scoped>
+.comment-input {
+  display: inline-block;
+  margin-left: 10px;
+  width: calc(100% - 70px);
+  line-height: 60px;
+}
+</style>

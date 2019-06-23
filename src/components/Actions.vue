@@ -14,7 +14,7 @@
     </el-row>
 
     <el-row type="flex" align="middle">
-      <el-col :span="6" style="text-align:cehnter">
+      <el-col :span="10" style="text-align:cehnter">
         <span>
           <i class="el-icon-view"/>
           <span class='hidden-xs-only'>
@@ -27,12 +27,10 @@
       </el-col>
       <el-col :span="18">
         <el-row type="flex" align="middle" justify="end">
-          <el-col :span="3" :xs="5">
-            <el-button class="like-btn" @click="toggleLike">
+          <el-col style="text-align:right">
+            <el-button class="txt-btn" @click="toggleLike">
               <svg-icon :icon-class="liked?'liked':'like'"/> 54
             </el-button>
-          </el-col>
-          <el-col :span="3" :xs="5">
             <el-button class="comment-btn" type="text">
               <i class="el-icon-chat-square" /> 27
             </el-button>
@@ -84,26 +82,26 @@ export default {
     float: right;
   }
 
-
-  .like-btn {
-    border: none;
-    background: none;
-    padding-left: 0;
-    padding-right: 0;
-
-    .svg-icon {
-      height: 1.2em;
-      width: 1.2em;
-    }
-
-    &:focus{
-      color: inherit;
-    }
+  .svg-icon {
+    height: 1.2em;
+    width: 1.2em;
   }
-
 
   .comment-btn {
     color: inherit;
   }
 }
+</style>
+
+<style lang="less">
+  .txt-btn {
+    border: none;
+    background: none!important;
+    padding-left: 0;
+    padding-right: 0;
+
+    &:focus{
+      color: inherit;
+    }
+  }
 </style>

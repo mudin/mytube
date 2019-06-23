@@ -64,6 +64,7 @@ export default {
 <style lang="less" scoped>
   .kaomoji {
     text-align: center;
+    float: left;
 
     span {
       display: inline-block;
