@@ -3,12 +3,12 @@
     <el-row type="flex" justify="space-between" align="middle">
       <el-col :span="18">
         <h3 class="title">
-          미안하다는 고백의 힘 박재연 리플러스 인간연구소 소장 작가 사과 용기...
+          {{post.videoName}}
         </h3>
       </el-col>
       <el-col :span="4" :xs="5">
         <span class="date">
-          6일전
+          {{post.createdAt}}
         </span>
       </el-col>
     </el-row>
@@ -45,10 +45,13 @@
   </div>
 </template>
 <script>
+import Post from '@/model/Post.js';
+
 export default {
   name: 'Actions',
   data() {
     return {
+      post: Post.mockPost(),
       liked: false
     };
   },

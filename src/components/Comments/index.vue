@@ -2,7 +2,7 @@
   <div id="comments">
     <h3>댓글 27개</h3>
     <Commenter/>
-    <CommentThread
+    <CommentCard
       v-for="comment in comments"
       :key="comment.id"
       :comment="comment"/>
@@ -11,13 +11,13 @@
 <script>
 import Comment from '@/model/Comment.js';
 import Commenter from './Commenter';
-import CommentThread from './CommentThread';
+import CommentCard from './CommentCard';
 
 export default {
   name: 'Comments',
   components: {
     Commenter,
-    CommentThread
+    CommentCard
   },
   data() {
     return {

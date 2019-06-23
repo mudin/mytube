@@ -1,9 +1,11 @@
 import Vue from 'vue';
+import VueMoment from 'vue-moment';
 import VueVideoPlayer from 'vue-video-player';
 import App from './App.vue';
 import store from './store';
 import './plugins/element';
 import router from './router';
+
 
 import './icons'; // icon
 
@@ -12,6 +14,9 @@ import 'video.js/dist/video-js.css';
 
 Vue.config.productionTip = false;
 // import 'vue-video-player/src/custom-theme.css'
+
+
+Vue.use(VueMoment);
 
 Vue.use(VueVideoPlayer, /* {
   options: global default options,

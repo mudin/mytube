@@ -7,6 +7,11 @@
 <script>
 export default {
   name: 'Player',
+  props: {
+    url: {
+      type: [Array, String]
+    }
+  },
   data() {
     return {
       playerOptions: {
@@ -14,15 +19,15 @@ export default {
         muted: true,
         fluid: true,
         language: 'en',
-        playbackRates: [0.7, 1.0, 1.5, 2.0],
-        sources: [{
-          type: 'video/mp4',
-          src: 'http://vjs.zencdn.net/v/oceans.mp4'
-        }]
+        playbackRates: [0.7, 1.0, 1.5, 2.0]
       }
     };
   },
   mounted() {
+    this.playerOptions.sources = [{
+      type: 'video/mp4',
+      src: this.url
+    }];
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
   },

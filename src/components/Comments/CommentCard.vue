@@ -7,11 +7,14 @@
       <el-col :span="22">
         <el-row>
           <el-col>
-            <span>{{comment.updated_at}}</span>
+            <span class="date">{{comment.updated_at | moment("from", "now")}}</span>
           </el-col>
         </el-row>
-
-        {{comment.comment}}
+        <el-row>
+          <el-col>
+            {{comment.comment}}
+          </el-col>
+        </el-row>
       </el-col>
     </el-row>
   </div>
@@ -21,7 +24,7 @@ import Comment from '@/model/Comment';
 import Kaomoji from '@/components/Kaomoji';
 
 export default {
-  name: 'CommentThread',
+  name: 'CommentCard',
   components: {
     Kaomoji
   },
@@ -38,5 +41,13 @@ export default {
 <style lang="less" scoped>
   .comment {
     margin: 30px 0;
+
+    .date {
+      color: hsla(0, 0%, 6.7%, 0.6);
+      font-size: 0.9em;
+      font-weight: 400;
+      line-height: 1.8rem;
+      text-transform: none;
+    }
   }
 </style>
