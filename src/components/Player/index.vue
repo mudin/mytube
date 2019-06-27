@@ -10,6 +10,9 @@ export default {
   props: {
     url: {
       type: [Array, String]
+    },
+    poster: {
+      type: String
     }
   },
   data() {
@@ -28,6 +31,9 @@ export default {
       type: 'video/mp4',
       src: this.url
     }];
+
+    this.playerOptions.poster = this.poster;
+
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
   },
