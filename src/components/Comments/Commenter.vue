@@ -16,7 +16,7 @@
     </el-row>
     <el-row  type="flex" justify="end" align="middle" v-if="rawComment || onFocused">
       <el-col style="text-align:right">
-        <el-button @click="rawComment=''">
+        <el-button @click="rawComment=''" type="text">
           취소
         </el-button>
         <el-button
@@ -60,11 +60,18 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .comment-input {
   display: inline-block;
   margin-left: 10px;
   width: calc(100% - 70px);
   line-height: 60px;
+
+  input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: unset;
+  }
 }
 </style>
